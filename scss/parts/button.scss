@@ -1,0 +1,16 @@
+//-----------------------------------
+//     よくあるボタン用
+//     使用用途
+//       .buttonなどの中で宣言して使う感じ。
+//     サンプル
+//        .button{
+//           @include button(0,0,0px)
+//        }
+//-----------------------------------
+@mixin button($width,$height,$radius){
+	@content;
+	width        : $width  + px;
+	height       : $height + px;
+	//radiusは複数指定の可能性もあるので、pxはinclude側でつけること。
+	border-radius: $radius;
+}
